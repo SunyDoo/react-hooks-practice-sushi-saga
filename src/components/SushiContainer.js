@@ -3,14 +3,14 @@ import MoreButton from "./MoreButton";
 import Sushi from "./Sushi";
 
 
-function SushiContainer(sushis) {
+function SushiContainer({ sushis, moreSushi, payBill, money, eatSushi }) {
   return (
     <div className="belt">
       {
       sushis.map((sushi) => (
-        <Sushi key={sushi.id} sushi={sushi} name={sushi.name} image={sushi.img_url} price={sushi.price} />
+        <Sushi key={sushi.id} sushi={sushi} name={sushi.name} image={sushi.img_url} price={sushi.price} payBill={payBill} money={money} eatSushi={eatSushi} />
       ))}
-      <MoreButton />
+      <MoreButton moreSushi={moreSushi} />
     </div>
   );
 }
